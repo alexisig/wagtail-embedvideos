@@ -1,6 +1,6 @@
 {% load i18n %}
 {% trans "Choose an embed video" as choose_str %}
-{% include "wagtailadmin/shared/header.html" with title=choose_str merged=1 tabbed=1 icon="media" %}
+{% include "wagtailadmin/shared/ajax_pagination_nav.html" with title=choose_str merged=1 tabbed=1 icon="media" %}
 
 <section id="search" class="{% if not uploadform.errors %}active{% endif %} nice-padding">
     <form class="embed-video-search search-bar" action="{% url 'wagtail_embed_videos_chooser' %}{% if will_select_format %}?select_format=true{% endif %}" method="GET" autocomplete="off">
