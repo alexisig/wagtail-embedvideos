@@ -91,4 +91,7 @@ def chooser(request):
 def embed_video_chosen(request, embed_video_id):
     embed_video = get_object_or_404(get_embed_video_model(), id=embed_video_id)
 
-    return get_embed_video_json(embed_video)
+    return render_modal_workflow(
+        request, 'wagtail_embed_videos/chooser/embed_video_chosen.html', None,
+        {'embed_video_json': get_embed_video_json(embed_video)}
+    )

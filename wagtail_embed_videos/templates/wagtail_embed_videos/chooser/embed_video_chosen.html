@@ -1,3 +1,8 @@
+{% load i18n %}
+{% trans "Choose an embed video" as choose_str %}
+{% include "wagtailadmin/shared/header.html" with title=choose_str merged=1 tabbed=1 icon="media" %}
+
+
 <script>
 function(modal) {
     modal.respond('embedVideoChosen', {{ embed_video_json|safe }});
